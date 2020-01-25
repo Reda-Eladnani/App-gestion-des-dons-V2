@@ -56,7 +56,7 @@
 
     <!-- Jumbotron Header -->
     <header class="jumbotron my-4" ><!--style="background-image: url('images/hands.jpg') ; max-width:100%; " > -->
-        <h1 class="display-3">${sessionScope.nomAsso}, bienvenue sur votre profil!</h1>
+        <h1 class="display-3">${sessionScope.nomAsso}</h1>
       <p class="lead">Vous trouverez ici les evenements des associations ayant besoin de votre aide.</p>
       <a href="AddEvent" class="btn btn-primary btn-lg">Creer un evenement</a>
     </header>

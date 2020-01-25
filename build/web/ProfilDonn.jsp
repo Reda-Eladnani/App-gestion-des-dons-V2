@@ -58,7 +58,7 @@
     <header class="jumbotron my-4" ><!--style="background-image: url('images/hands.jpg') ; max-width:100%; " > -->
         <h1 class="display-3">M. ${sessionScope.nomDonnat}, bienvenue sur votre profil!</h1>
       <p class="lead">Vous trouverez ici les evenements des associations ayant besoin de votre aide.</p>
-      <a href="#" class="btn btn-primary btn-lg">Passer directement aux evenements!</a>
+      <a href="ShowEvents" class="btn btn-primary btn-lg">Passer directement aux evenements!</a>
     </header>
 
     <!-- Page Features -->

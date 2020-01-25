@@ -3,7 +3,7 @@
     Created on : Jan 14, 2020, 12:12:41 AM
     Author     : Eladnani Ahmed Reda
 --%>
-
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
@@ -15,7 +15,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>Votre profil</title>
+  <title>Les evenements Disponibles</title>
 
   <!-- Bootstrap core CSS -->
   <link href="vendor_profilDonn/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -54,69 +54,25 @@
   <!-- Page Content -->
   <div class="container">
 
-    <!-- Jumbotron Header -->
-    <header class="jumbotron my-4" ><!--style="background-image: url('images/hands.jpg') ; max-width:100%; " > -->
-        <h1 class="display-3">${sessionScope.nomAsso}</h1>
-      <p class="lead">Vous trouverez ici les evenements des associations ayant besoin de votre aide.</p>
-      <a href="AddEvent" class="btn btn-primary btn-lg">Creer un evenement</a>
-    </header>
 
     <!-- Page Features -->
     <div class="row text-center">
-
+       <c:forEach var = "ev" items = "${eventsList}"> 
       <div class="col-lg-3 col-md-6 mb-4">
         <div class="card h-100">
-            <img class="card-img-top" src="images/CINDH.jpg" alt=""> 
+            <img class="card-img-top" src="${ev.image_event}" alt=""> 
           <%--<div class="card-img-top" style="background-image: url('images/CINDH.jpg');">--%>
           <div class="card-body">
-            <h4 class="card-title">CINDH</h4>
-            <p class="card-text">Club d'Initiative Nationale et Développement Humain CINDH à l'Ecole Nationale Supérieure de l'informatique et Analyse des Systémes l'ENSIAS.</p>
+            <h4 class="card-title">${ev.titre_event}</h4>
+            <p class="card-text">${ev.comm_event}</p>
           </div>
           <div class="card-footer">
-            <a href="#" class="btn btn-primary">Voir plus sur le CINDH</a>
+            <a href="#" class="btn btn-primary">Aider</a>
           </div>
         </div>
       </div>
 
-      <div class="col-lg-3 col-md-6 mb-4">
-        <div class="card h-100">
-          <img class="card-img-top" src="images/ADEI.JPG" alt="">
-          <div class="card-body">
-              <h4 class="card-title">${sessionScope.nomAss}</h4>
-            <p class="card-text">Association des eleves ingenieurs à l'Ecole Nationale Supérieure de l'informatique et Analyse des Systémes l'ENSIAS.</p>
-          </div>
-          <div class="card-footer">
-            <a href="ListeAssociations.jsp" class="btn btn-primary">Voir plus sur l'ADEI</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-lg-3 col-md-6 mb-4">
-        <div class="card h-100">
-          <img class="card-img-top" src="http://placehold.it/500x325" alt="">
-          <div class="card-body">
-            <h4 class="card-title">Card title</h4>
-            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente esse necessitatibus neque.</p>
-          </div>
-          <div class="card-footer">
-            <a href="#" class="btn btn-primary">Find Out More!</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-lg-3 col-md-6 mb-4">
-        <div class="card h-100">
-          <img class="card-img-top" src="http://placehold.it/500x325" alt="">
-          <div class="card-body">
-            <h4 class="card-title">Card title</h4>
-            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo magni sapiente, tempore debitis beatae culpa natus architecto.</p>
-          </div>
-          <div class="card-footer">
-            <a href="#" class="btn btn-primary">Find Out More!</a>
-          </div>
-        </div>
-      </div>
-
+        </c:forEach>
     </div>
     <!-- /.row -->
 
