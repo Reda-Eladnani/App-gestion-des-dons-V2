@@ -12,6 +12,14 @@
         <servlet-name>InfosAss</servlet-name>
         <servlet-class>Servlets.InfosAss</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>AddEvent</servlet-name>
+        <servlet-class>Servlets.AddEvent</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>LoginAss</servlet-name>
+        <servlet-class>Servlets.LoginAss</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>RegisterDonn</servlet-name>
         <url-pattern>/RegisterDonn/*</url-pattern>
@@ -31,6 +39,14 @@
     <servlet-mapping>
         <servlet-name>InfosAss</servlet-name>
         <url-pattern>/InfosAss</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>AddEvent</servlet-name>
+        <url-pattern>/AddEvent</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>LoginAss</servlet-name>
+        <url-pattern>/LoginAss/*</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

@@ -124,7 +124,7 @@ public class AssociationDB implements Serializable{
 		
 		try {
 			Connection cnx = ConnexionDB.loadDatabase();
-			PreparedStatement ps = cnx.prepareStatement("select emailAss,mdpAss from association");
+			PreparedStatement ps = cnx.prepareStatement("select * from association");
 			ResultSet st = ps.executeQuery();
 			String email = p.getEmail_ass();
 			String password = p.getMdp_ass();
@@ -132,6 +132,8 @@ public class AssociationDB implements Serializable{
 				if(email.equals(st.getString("emailAss"))) {
 					if(password.equals(st.getString("mdpAss"))) {
 						status = "success";
+                                                                                                            p.setId_association(st.getInt("idAss"));
+                                                                                                            p.setNom_ass(st.getString("nomAss"));
 					}else {
 						status = "Mot de passe  incorrecte";
 					}
