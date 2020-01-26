@@ -24,6 +24,14 @@
         <servlet-name>ShowEvents</servlet-name>
         <servlet-class>Servlets.ShowEvents</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>ProfilDonnateur</servlet-name>
+        <servlet-class>Servlets.ProfilDonnateur</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ProfilAssociation</servlet-name>
+        <servlet-class>Servlets.ProfilAssociation</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>RegisterDonn</servlet-name>
         <url-pattern>/RegisterDonn/*</url-pattern>
@@ -55,6 +63,14 @@
     <servlet-mapping>
         <servlet-name>ShowEvents</servlet-name>
         <url-pattern>/ShowEvents</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ProfilDonnateur</servlet-name>
+        <url-pattern>/ProfilDonnateur/*</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ProfilAssociation</servlet-name>
+        <url-pattern>/ProfilAssociation/*</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
