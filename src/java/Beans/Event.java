@@ -1,5 +1,10 @@
 package Beans;
 
+import java.io.ByteArrayOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.sql.SQLException;
+import java.util.Base64;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
@@ -72,6 +77,20 @@ public class Event {
     public void setId_ass(int id_ass) {
         this.id_ass = id_ass;
     }
+    public String blobToString(java.sql.Blob blob) throws SQLException, IOException {
+		java.io.InputStream inputStream = blob.getBinaryStream();
+        ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
+        byte[] buffer = new byte[16384];
+        int bytesRead = -1;
+         
+        while ((bytesRead = inputStream.read(buffer)) != -1) {
+            outputStream.write(buffer, 0, bytesRead);                  
+        }
+         
+        byte[] imageBytes = outputStream.toByteArray();
+        String picture = Base64.getEncoder().encodeToString(imageBytes);
+        return picture;
+	}
         
 }
 

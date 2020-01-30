@@ -31,6 +31,7 @@
     <servlet>
         <servlet-name>ProfilAssociation</servlet-name>
         <servlet-class>Servlets.ProfilAssociation</servlet-class>
+        
     </servlet>
     <servlet-mapping>
         <servlet-name>RegisterDonn</servlet-name>
@@ -50,7 +51,7 @@
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>InfosAss</servlet-name>
-        <url-pattern>/InfosAss</url-pattern>
+        <url-pattern>/InfosAss/*</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>AddEvent</servlet-name>
@@ -71,10 +72,11 @@
     <servlet-mapping>
         <servlet-name>ProfilAssociation</servlet-name>
         <url-pattern>/ProfilAssociation/*</url-pattern>
+        
     </servlet-mapping>
     <session-config>
         <session-timeout>
-            30
+            60
         </session-timeout>
     </session-config>
 </web-app>

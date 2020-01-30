@@ -16,6 +16,7 @@ import java.util.List;
 import javax.xml.ws.Response;
 
 import Beans.Event;
+import java.io.InputStream;
 import javax.servlet.http.HttpSession;
         
 public class EventDB implements Serializable{
@@ -38,7 +39,7 @@ public class EventDB implements Serializable{
 				e.setId_event(st.getInt("id_event"));
 	        	e.setTitre_event(st.getString("titre_event"));
 	            e.setComm_event(st.getString("comm_event"));
-	            e.setImage_event(st.getString("image_event"));
+	            e.setImage_event( st.getString("image_event"));
 	            list_events.add(e);
 			}
 			cnx.close();
@@ -63,7 +64,7 @@ public class EventDB implements Serializable{
 			while (rs.next()) {
 				String titree = rs.getString("titre");
 				String  commentaire = rs.getString("commEvent");
-				String imagee = rs.getString("imageEvent");
+				String imagee =  rs.getString("imageEvent");
 				int id_ass = rs.getInt("idAss");
 				System.out.println("cool");
 				event = new Event(id, titree, commentaire, imagee, id_ass );

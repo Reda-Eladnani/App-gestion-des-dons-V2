@@ -1,11 +1,8 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package DB;
 
 import Beans.Event;
+import java.io.InputStream;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -56,7 +53,7 @@ public class ShowEventsLists {
 					ev.setId_event(st.getInt("idEvent"));
                                                                                           ev.setTitre_event(st.getString("titre"));
                                                                                           ev.setComm_event(st.getString("commEvent"));
-                                                                                          ev.setImage_event(st.getString("imageEvent"));
+                                                                                          ev.setImage_event( st.getString("imageEvent"));
                                                                                           ev.setId_ass(st.getInt("idAss"));
                                                                                           list_myEvents.add(ev);
 				}
@@ -65,7 +62,7 @@ public class ShowEventsLists {
 			}catch(Exception e) {
 				e.printStackTrace();
 			}
+                                    
 		return list_myEvents;	
-		}
-		
+		}		
 }

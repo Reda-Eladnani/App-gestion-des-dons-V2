@@ -1,6 +1,7 @@
 
 package Beans;
 
+import java.io.InputStream;
 import java.io.Serializable;
 /**
  *
@@ -15,6 +16,15 @@ public class Association implements Serializable{
     private String description_ass;
     private String rib;
     private String mdp_ass;
+    private InputStream imageAss;
+
+    public InputStream getImageAss() {
+        return imageAss;
+    }
+
+    public void setImageAss(InputStream imageAss) {
+        this.imageAss = imageAss;
+    }
     
 
 

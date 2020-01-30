@@ -26,7 +26,7 @@
 </head>
 
 <body>
-
+   
   <!-- Navigation -->
   <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
     <div class="container">
@@ -38,13 +38,7 @@
         <ul class="navbar-nav ml-auto">
           
           <li class="nav-item">
-            <a class="nav-link" href="#">Vos favoris</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Vos dons</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Associations vous interressants</a>
+            <a class="nav-link" href="InfosAss">Votre Association</a>
           </li>
         </ul>
       </div>
@@ -55,32 +49,38 @@
   <div class="container">
 
     <!-- Jumbotron Header -->
-    <header class="jumbotron my-4" ><!--style="background-image: url('images/hands.jpg') ; max-width:100%; " > -->
+    <header class="jumbotron my-4" >
         <h1 class="display-3">${sessionScope.nomAsso}</h1>
-      <p class="lead">Vous trouverez ici les evenements des associations ayant besoin de votre aide.</p>
-      <a href="AddEvent" class="btn btn-primary btn-lg">Creer un evenement</a>
+      <p class="lead">Vous trouverez ici vos evenements.</p>
+      <a href="AddEvent" class="btn btn-primary btn-lg">Creer un nouveau evenement</a>
     </header>
 
     <!-- Page Features -->
- <div class="row text-center">
-       <c:forEach var = "ev" items = "${eventsAssList}"> 
+    
+    <div class="row text-center">
+        
+      <c:forEach var = "ev" items = "${eventsAssList}"> 
+          
       <div class="col-lg-3 col-md-6 mb-4">
         <div class="card h-100">
             <img class="card-img-top" src="${ev.image_event}" alt=""> 
-          <%--<div class="card-img-top" style="background-image: url('images/CINDH.jpg');">--%>
           <div class="card-body">
             <h4 class="card-title">${ev.titre_event}</h4>
             <p class="card-text">${ev.comm_event}</p>
           </div>
           <div class="card-footer">
-            <a href="#" class="btn btn-primary">Aider</a>
+            <a href="#" class="btn btn-primary">Modifier</a>
+            <a href="#" class="btn btn-primary">Supprimer</a>
           </div>
+<!--          <div class="card-footer">
+            <a href="#" class="btn btn-primary">Supprimer</a>
+          </div>-->
         </div>
       </div>
 
         </c:forEach>
     </div>
-    <!-- /.row -->
+        
 
   </div>
   <!-- /.container -->

@@ -1,10 +1,10 @@
-/**
+
 package Servlets;
 
 /**
  *
  * @author Eladnani Ahmed Reda
- 
+ **/
 
 import java.io.IOException;
 import java.io.PrintWriter;
@@ -17,50 +17,30 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
 import Beans.Association;
+import Beans.Event;
 import DB.AssociationDB;
+import java.util.ArrayList;
 
 @WebServlet("/InfosAss")
 public class InfosAss extends HttpServlet {
 	private static final long serialVersionUID = 1L;
-       
-    public InfosAss() {
-        super();
-        
-    }
+                  AssociationDB assdb = null;
+	public InfosAss() {
+	        super();
+	        assdb = new AssociationDB();
+	    }
 
-	
         @Override
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		
-		response.sendRedirect(request.getServletContext().getContextPath()+ "/InfosAssociation.jsp");
-	}
+                                    HttpSession session = request.getSession();
+                                    int idAss = (int) session.getAttribute("idAsso");
+	        	Association ass = assdb.getAsso(idAss);
+	        	request.setAttribute("ass", ass);
 
-	
-        @Override
-	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		AssociationDB assdb = new AssociationDB();
-		response.setContentType("text/html");  
-		PrintWriter out = response.getWriter(); 
-		Association ass = new Association();
-                                    
-		try {
-			if(status.equals("success")) {
-				 HttpSession session = request.getSession();
-                                                                         session.setAttribute("nomDonnat", donn.getNom()); 
-				response.sendRedirect("ProfilDonn.jsp");
-                                                                        System.out.println("cool");
-			}else {
-				request.setAttribute("test", status );
-				out.print(status);
-				getServletContext().getRequestDispatcher("/LoginDonnateur.jsp").forward(request, response);
-                                                                       
-			}
-		}catch(Exception e) {
-			e.printStackTrace();
-		}
-		
+	      	request.getRequestDispatcher("/InfosAss.jsp").forward(request, response);
+	       
 		
 	}
 
 }
-*/

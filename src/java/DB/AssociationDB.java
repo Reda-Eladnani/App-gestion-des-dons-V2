@@ -63,7 +63,7 @@ public class AssociationDB implements Serializable{
 			e.getStackTrace();
 		}
 	}
-	//modifier un utilisateur
+	//modifier une association
 	public boolean update(Association p) {
 		try {
 		    Connection connexion = (Connection ) ConnexionDB.loadDatabase();
@@ -147,6 +147,38 @@ public class AssociationDB implements Serializable{
 			e.printStackTrace();
 		}
 		return status;
+		
+	}
+        //Récupérer une association par id
+	public Association getAsso(int id){
+		Association ass = new Association();
+		
+		ResultSet resultat = null;
+		try {
+			Connection cnx = ConnexionDB.loadDatabase();
+			PreparedStatement statement = cnx.prepareStatement("SELECT * FROM association where idAss=?;"); 
+                                                      statement.setInt(1, id);
+                                                        resultat = statement.executeQuery();
+                                                        while(resultat.next()) {
+                                                            
+                                                            String nom = resultat.getString("nomAss") ;
+                                                            String description = resultat.getString("descriptionAss") ;
+                                                            String email = resultat.getString("emailAss") ;
+                                                            String password= resultat.getString("mdpAss") ;
+                                                            String rib = resultat.getString("rib");
+                                                           
+                                                            ass.setNom_ass(nom);
+                                                            ass.setDescription_ass(description);
+                                                            ass.setEmail_ass(email);
+                                                            ass.setMdp_ass(password);
+                                                            ass.setRib(rib);
+                                                            
+                                                            cnx.close();
+                                                        }
+		}catch(Exception e ) {
+			e.printStackTrace();
+		}
+		return ass;
 		
 	}
 

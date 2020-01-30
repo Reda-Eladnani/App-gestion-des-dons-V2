@@ -77,7 +77,7 @@
 					</div>
                                                                     
                                                                                           <div>
-							<a href="RegisterAss.jsp" class="txt1">
+							<a href="RegisterAss" class="txt1">
 								S'inscrir en tant qu'association?
 							</a>
 						</div>

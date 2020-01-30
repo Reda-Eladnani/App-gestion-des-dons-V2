@@ -48,12 +48,13 @@ public class AddEvent extends HttpServlet {
 		System.out.println(a);
 		if(a.equals("sc"))   //On success, you can display a message to user on Home page
 		 {
-		 request.getRequestDispatcher("/ProfilAss.jsp").forward(request, response);
+//		 request.getRequestDispatcher("/ProfilAss.jsp").forward(request, response);
+response.sendRedirect("http://localhost:8080/AppGestionDons/ProfilAssociation");
 		 }
 		 else   //On Failure, display a meaningful message to the User.
 		 {
 		 request.setAttribute("errMessage", a);
-		 request.getRequestDispatcher("/AjoutEvent.jsp").forward(request, response);
+		request.getRequestDispatcher("/AjoutEvent.jsp").forward(request, response);
 		 }
 		
 	}

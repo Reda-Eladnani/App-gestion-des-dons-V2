@@ -52,7 +52,7 @@ public class LoginAss extends HttpServlet {
 				 HttpSession session = request.getSession();
                                                                          session.setAttribute("idAsso", ass.getId_association()); 
                                                                          session.setAttribute("nomAsso", ass.getNom_ass()); 
-				response.sendRedirect("ProfilAss.jsp");
+				response.sendRedirect("http://localhost:8080/AppGestionDons/ProfilAssociation");
                                                                         System.out.println("cool");
 			}else {
 				request.setAttribute("test", status );
