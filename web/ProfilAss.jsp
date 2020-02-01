@@ -63,7 +63,7 @@
           
       <div class="col-lg-3 col-md-6 mb-4">
         <div class="card h-100">
-            <img class="card-img-top" src="${ev.image_event}" alt=""> 
+            <img class="card-img-top" src="images/${ev.image_event}" alt=""> 
           <div class="card-body">
             <h4 class="card-title">${ev.titre_event}</h4>
             <p class="card-text">${ev.comm_event}</p>
