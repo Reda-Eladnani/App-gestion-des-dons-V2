@@ -51,24 +51,25 @@ public class EventDB implements Serializable{
 	}
         
                     //Find an event 
-	public Event find(int id) {
+	public Event find(String titre) {
 		Event event = null;
 		try {
 			Connection conn = ConnexionDB.loadDatabase();
 			System.out.println("hi");
-			PreparedStatement ps = conn.prepareStatement("SELECT * from event where idEvent=?");
-			ps.setInt(1, id);
+			PreparedStatement ps = conn.prepareStatement("SELECT * from event where titre=?");
+			ps.setString(1, titre);
 			System.out.println("lol2");
 			ResultSet rs = ps.executeQuery();
 			System.out.println("hello");
 			while (rs.next()) {
-				String titree = rs.getString("titre");
+				//String titre = rs.getString("titre");
 				String  commentaire = rs.getString("commEvent");
 				String imagee =  rs.getString("imageEvent");
 				int id_ass = rs.getInt("idAss");
+                                                                        int id = rs.getInt("idEvent");
 				System.out.println("cool");
-				event = new Event(id, titree, commentaire, imagee, id_ass );
-				System.out.println("piw");
+				event = new Event(id, titre, commentaire, imagee, id_ass );
+				System.out.println("wesh");
 			}
 		}catch(Exception e) {
 			System.out.println("die");
@@ -126,17 +127,20 @@ public class EventDB implements Serializable{
 	public boolean update(Event event) {
 		try {
 			Connection conn = ConnexionDB.loadDatabase();
-			PreparedStatement ps = conn.prepareStatement("UPDATE event set titre=?, commEvent=?, imageEvent=?,"
-					
-					+ "where idEvent=?;");
-			ps.setString(1, event.getTitre_event());
-			ps.setString(2, event.getComm_event());
-			ps.setString(3, event.getImage_event());
-			ps.setInt(8, event.getId_event());
+			PreparedStatement ps = conn.prepareStatement("UPDATE event set commEvent=?, imageEvent=? where titre=?;");
+                        System.out.println("dazt lps");
+			//ps.setString(1, event.getTitre_event());
+			ps.setString(1, event.getComm_event());
+			ps.setString(2, event.getImage_event());
+			ps.setString(3, event.getTitre_event());
+                        System.out.println("dazt set");
 			int i = ps.executeUpdate();
+                        System.out.println("dazt lupdate");
 			if(i == 1) {
 				conn.close();
+                                  System.out.println("returna true");
 				return true;
+                              
 			}
 			
 		}catch(Exception e) {

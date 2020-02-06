@@ -31,7 +31,10 @@
     <servlet>
         <servlet-name>ProfilAssociation</servlet-name>
         <servlet-class>Servlets.ProfilAssociation</servlet-class>
-        
+    </servlet>
+    <servlet>
+        <servlet-name>ModifierEvent</servlet-name>
+        <servlet-class>Servlets.ModifierEvent</servlet-class>
     </servlet>
     <servlet-mapping>
         <servlet-name>RegisterDonn</servlet-name>
@@ -72,7 +75,10 @@
     <servlet-mapping>
         <servlet-name>ProfilAssociation</servlet-name>
         <url-pattern>/ProfilAssociation/*</url-pattern>
-        
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ModifierEvent</servlet-name>
+        <url-pattern>/ModifierEvent/*</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

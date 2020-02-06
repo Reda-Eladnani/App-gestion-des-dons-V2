@@ -3,7 +3,7 @@
     Created on : Dec 7, 2019, 10:29:03 PM
     Author     : Eladnani Ahmed Reda
 --%>
-
+<%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <head>
@@ -38,26 +38,26 @@
 	<div class="limiter">
 		<div class="container-login100">
 			<div class="wrap-login100">
-                            <form class="login100-form validate-form" action="AddEvent" method="post" >
+                            <form class="login100-form validate-form" action="ModifierEvent" method="post" >
 					<span class="login100-form-title p-b-43">
 						Entrez les informations de votre evenement
 					</span>
 					
 					
 					<div class="wrap-input100 validate-input" data-validate = "Titre de votre evenement">
-						<input class="input100" type="text" name="titre">
+						<input class="input100" type="text" name="titre" value="${ev.titre_event}">
 						<span class="focus-input100"></span>
-						<span class="label-input100">Titre</span>
+						<span class="label-input100">${ev.titre_event}</span>
 					</div>
                                 
                                                                                           <div class="wrap-input100 validate-input" data-validate = "Description de votre evenement">
-						<input class="input100" type="text" name="commentaire">
+						<input class="input100" type="text" name="comm" value="${ev.comm_event}">
 						<span class="focus-input100"></span>
 						<span class="label-input100">Description</span>
 					</div>
                                 
                                                                                           <div class="wrap-input100 validate-input" data-validate = "Inserrer l'image de votre evenement">
-						<input class="input100" type="file" name="image">
+						<input class="input100" type="file" name="image" value="${ev.image_event}">
 						<span class="focus-input100"></span>
 						<span class="label-input100">Inserrer l'image de votre evenement</span>
 					</div>
@@ -71,7 +71,11 @@
 							Enregistrer
 						</button>
 					</div>
-					
+					<div>
+							<a href="ProfilAssociation">
+								Retour au profil
+							</a>
+						</div>
 					
 				</form>
 

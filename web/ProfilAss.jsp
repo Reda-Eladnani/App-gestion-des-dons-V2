@@ -69,8 +69,8 @@
             <p class="card-text">${ev.comm_event}</p>
           </div>
           <div class="card-footer">
-            <a href="#" class="btn btn-primary">Modifier</a>
-            <a href="#" class="btn btn-primary">Supprimer</a>
+            <a href="ModifierEvent?titre=${ev.titre_event}" class="btn btn-primary">Modifier</a>
+            <a href="SupprimerEvent" class="btn btn-primary">Supprimer</a>
           </div>
 <!--          <div class="card-footer">
             <a href="#" class="btn btn-primary">Supprimer</a>

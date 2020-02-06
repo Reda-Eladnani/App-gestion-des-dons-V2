@@ -12,6 +12,7 @@ import javax.servlet.http.HttpSession;
 
 import Beans.Event;
 import DB.EventDB;
+import java.awt.image.BufferedImage;
 
 /**
  * Servlet implementation class Addevel
@@ -43,7 +44,7 @@ public class AddEvent extends HttpServlet {
 		ev.setId_ass(idAss);
 		ev.setTitre_event(request.getParameter("titre"));
 		ev.setComm_event(request.getParameter("commentaire"));
-                                    ev.setImage_event(request.getParameter("image"));
+                                    ev.setImage_event(request.getParameter("image")); 
 		String a = eventdb.Addevent(ev);
 		System.out.println(a);
 		if(a.equals("sc"))   //On success, you can display a message to user on Home page
