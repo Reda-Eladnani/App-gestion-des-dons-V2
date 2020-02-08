@@ -74,6 +74,11 @@
 						<span class="focus-input100"></span>
 						<span class="label-input100">RIB</span>
 					</div>
+                                <div class="wrap-input100 validate-input" data-validate="Image">
+						<input class="input100" type="file" name="image">
+						<span class="focus-input100"></span>
+						<span class="label-input100">Image</span>
+					</div>
 			
 
 					<div class="container-login100-form-btn">
@@ -85,7 +90,7 @@
 					
 				</form>
 
-				<div class="login100-more" style="background-image: url('images/ADEI.JPG');">
+				<div class="login100-more" style="background-image: url('images/20191020_161226.jpg');">
 				</div>
 			</div>
 		</div>

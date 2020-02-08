@@ -36,6 +36,26 @@
         <servlet-name>ModifierEvent</servlet-name>
         <servlet-class>Servlets.ModifierEvent</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>SupprimerEvent</servlet-name>
+        <servlet-class>Servlets.SupprimerEvent</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>ProfilAssPourDonn</servlet-name>
+        <servlet-class>Servlets.ProfilAssPourDonn</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>Administrateur</servlet-name>
+        <servlet-class>Servlets.Administrateur</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>LoginAdmin</servlet-name>
+        <servlet-class>Servlets.LoginAdmin</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>SupprimerAss</servlet-name>
+        <servlet-class>Servlets.SupprimerAss</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>RegisterDonn</servlet-name>
         <url-pattern>/RegisterDonn/*</url-pattern>
@@ -79,6 +99,26 @@
     <servlet-mapping>
         <servlet-name>ModifierEvent</servlet-name>
         <url-pattern>/ModifierEvent/*</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>SupprimerEvent</servlet-name>
+        <url-pattern>/SupprimerEvent/*</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>ProfilAssPourDonn</servlet-name>
+        <url-pattern>/ProfilAssPourDonn/*</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Administrateur</servlet-name>
+        <url-pattern>/Administrateur/*</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>LoginAdmin</servlet-name>
+        <url-pattern>/LoginAdmin</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>SupprimerAss</servlet-name>
+        <url-pattern>/SupprimerAss/*</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>

@@ -53,9 +53,9 @@ public class LoginDonn extends HttpServlet {
 			if(status.equals("success")) {
 				 HttpSession session = request.getSession();
                                                                          session.setAttribute("nomDonnat", donn.getNom()); 
-                                                                         List<Association> listeAsso  = assdb.getAll();
-                                                                         session.setAttribute("nomAss",listeAsso.get(0).getNom_ass());
-				response.sendRedirect("ProfilDonn.jsp");
+//                                                                         List<Association> listeAsso  = assdb.getAll();
+//                                                                         session.setAttribute("nomAss",listeAsso.get(0).getNom_ass());
+				response.sendRedirect("ProfilDonnateur");
                                                                         System.out.println("cool");
 			}else {
 				request.setAttribute("test", status );

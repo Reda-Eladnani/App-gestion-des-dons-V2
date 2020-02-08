@@ -22,46 +22,66 @@ public class AssociationDB implements Serializable{
 		super();
 	}
 	//Récupérer les associations
-	public List<Association> getAll(){
-		List<Association> associations = new ArrayList<Association>();
+	public ArrayList<Association> getAll(){
+		ArrayList<Association> associations = new ArrayList<Association>();
 		
-		ResultSet resultat = null;
+		//ResultSet st = null;
 		try {
 			Connection cnx = ConnexionDB.loadDatabase();
-			PreparedStatement statement = cnx.prepareStatement("SELECT * FROM association;");           
-            resultat = statement.executeQuery();
-            while(resultat.next()) {
-            	int id = resultat.getInt("idAss");
-            	String nom = resultat.getString("nomAss") ;
-            	String description = resultat.getString("descriptionAss") ;
-            	String email = resultat.getString("emailAss") ;
-            	String password= resultat.getString("mdpAss") ;
-            	Association ass = new Association();
-            	ass.setId_association(id);
-            	ass.setNom_ass(nom);
-            	ass.setDescription_ass(description);
-            	ass.setEmail_ass(email);
-            	ass.setMdp_ass(password);
-            	associations.add(ass);
-            	cnx.close();
-            }
-		}catch(Exception e ) {
-			e.printStackTrace();
+			PreparedStatement ps = cnx.prepareStatement("select * from association");
+			ResultSet st = ps.executeQuery();
+                                                        //System.out.println("ba9i madkhl lwhile");
+                                                              while(st.next()) {
+                                                                   System.out.println("dkhl lwhile");
+                                                                int id = st.getInt("idAss");
+                                                                 String email = st.getString("emailAss") ;
+                                                                String nom = st.getString("nomAss") ;
+                                                                
+                                                                String description = st.getString("descriptionAss") ;
+                                                                String rib= st.getString("rib") ;
+                                                                String password= st.getString("mdpAss") ;
+                                                                String image = st.getString("imageAss") ;
+                                                                
+                                                                Association ass = new Association();
+                                                                ass.setId_association(id);
+                                                                ass.setNom_ass(nom);
+                                                                ass.setDescription_ass(description);
+                                                                ass.setEmail_ass(email);
+                                                                ass.setMdp_ass(password);
+                                                                ass.setImageAss(image);
+                                                                ass.setRib(rib);
+                                                                associations.add(ass);
+                                                                System.out.println(nom);
+                                                                
+            } cnx.close();
+                                                              
 		}
+                catch(Exception e ) {
+			e.printStackTrace();
+		} 
+                
 		return associations;
 		
 	}
 	//delete une association
-	public void delete(int id) {
+	public boolean delete(String titre) {
 		try {
-			Connection cnx = ConnexionDB.loadDatabase();
-			PreparedStatement stmt = cnx.prepareStatement("delete from association where idAss = "+id);
-			stmt.executeUpdate();
-			cnx.close();
+			Connection connex  = ConnexionDB.loadDatabase();
+			PreparedStatement ps = connex.prepareStatement("delete from association where nomAss=?;");
+                                                        ps.setString(1, titre);
+			int i = ps.executeUpdate();
+                         System.out.println("hahowa jayy");
+			if(i >=1) {
+                            System.out.println("t9da gharad");
+				connex.close();
+				return true;
+			}
 			
 		}catch(Exception e) {
-			e.getStackTrace();
+                     System.out.println("finawa ghadi");
+			e.printStackTrace();
 		}
+		return false;
 	}
 	//modifier une association
 	public boolean update(Association p) {
@@ -94,7 +114,7 @@ public class AssociationDB implements Serializable{
 		System.out.println("coll");
 		try {
 			System.out.println("hey");
-			PreparedStatement ps = cnx.prepareStatement("Insert into association(idAss,emailAss,nomAss,descriptionAss,rib,mdpAss) values(?,?,?,?,?,?);");
+			PreparedStatement ps = cnx.prepareStatement("Insert into association(idAss,emailAss,nomAss,descriptionAss,rib,mdpAss,imageAss) values(?,?,?,?,?,?,?);");
 			System.out.println(ps);
 			System.out.println("hello");
 			ps.setString(1, null);
@@ -103,6 +123,7 @@ public class AssociationDB implements Serializable{
 			ps.setString(4, p.getDescription_ass());
                                                       ps.setString(5, p.getRib());
                                                       ps.setString(6, p.getMdp_ass());
+                                                       ps.setString(7, p.getImageAss());
 			System.out.println("pe");
                         
 			

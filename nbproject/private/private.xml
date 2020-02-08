@@ -3,13 +3,13 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/Eladnani%20Ahmed%20Reda/Desktop/AppGestionDons/web/LoginDonnateur.jsp</file>
-            <file>file:/C:/Users/Eladnani%20Ahmed%20Reda/Desktop/AppGestionDons/src/java/DB/EventDB.java</file>
-            <file>file:/C:/Users/Eladnani%20Ahmed%20Reda/Desktop/AppGestionDons/src/java/Servlets/AddEvent.java</file>
-            <file>file:/C:/Users/Eladnani%20Ahmed%20Reda/Desktop/AppGestionDons/web/ModificationEvent.jsp</file>
+            <file>file:/C:/Users/Eladnani%20Ahmed%20Reda/Desktop/AppGestionDons/src/java/Servlets/LoginDonn.java</file>
+            <file>file:/C:/Users/Eladnani%20Ahmed%20Reda/Desktop/AppGestionDons/src/java/Servlets/ProfilAssPourDonn.java</file>
+            <file>file:/C:/Users/Eladnani%20Ahmed%20Reda/Desktop/AppGestionDons/web/ProfilDonn.jsp</file>
             <file>file:/C:/Users/Eladnani%20Ahmed%20Reda/Desktop/AppGestionDons/web/ProfilAss.jsp</file>
+            <file>file:/C:/Users/Eladnani%20Ahmed%20Reda/Desktop/AppGestionDons/src/java/DB/ShowEventsLists.java</file>
             <file>file:/C:/Users/Eladnani%20Ahmed%20Reda/Desktop/AppGestionDons/web/WEB-INF/web.xml</file>
-            <file>file:/C:/Users/Eladnani%20Ahmed%20Reda/Desktop/AppGestionDons/src/java/Servlets/ModifierEvent.java</file>
+            <file>file:/C:/Users/Eladnani%20Ahmed%20Reda/Desktop/AppGestionDons/web/ProfilAssT.jsp</file>
             <file>file:/C:/Users/Eladnani%20Ahmed%20Reda/Desktop/AppGestionDons/src/java/Servlets/ProfilAssociation.java</file>
         </group>
     </open-files>

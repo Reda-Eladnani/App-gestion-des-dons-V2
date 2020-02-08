@@ -37,6 +37,7 @@ public class RegisterAss extends HttpServlet {
 		ass.setEmail_ass(request.getParameter("email"));
 		ass.setMdp_ass(request.getParameter("mdp"));
                                     ass.setRib(request.getParameter("rib"));
+                                    ass.setImageAss(request.getParameter("image"));
 		String a = assdb.getInsert(ass);
 		System.out.println(a);
 		if(a.equals("sc"))   //On success, you can display a message to user on Home page

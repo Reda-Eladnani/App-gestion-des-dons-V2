@@ -82,7 +82,7 @@
 					</div>
                                                                                             
                                                                                           <div>
-							<a href="LoginAss.jsp" class="txt1">
+							<a href="LoginAssociation.jsp" class="txt1">
 								Se connecter en tant qu'association?
 							</a>
 						</div>

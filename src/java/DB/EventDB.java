@@ -107,17 +107,21 @@ public class EventDB implements Serializable{
 	}
         
         //Delete an event
-	public boolean delete(int id) {
+	public boolean delete(String titre) {
 		try {
 			Connection connex  = ConnexionDB.loadDatabase();
-			PreparedStatement ps = connex.prepareStatement("DELETE from event where idEvent="+id+";");
+			PreparedStatement ps = connex.prepareStatement("DELETE from event where titre=?;");
+                                                        ps.setString(1, titre);
 			int i = ps.executeUpdate();
-			if(i ==1) {
+                         System.out.println("hahowa jayy");
+			if(i >=1) {
+                            System.out.println("t9da gharad");
 				connex.close();
 				return true;
 			}
 			
 		}catch(Exception e) {
+                     System.out.println("finawa ghadi");
 			e.printStackTrace();
 		}
 		return false;

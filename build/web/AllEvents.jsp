@@ -15,7 +15,7 @@
   <meta name="description" content="">
   <meta name="author" content="">
 
-  <title>Les evenements Disponibles</title>
+  <title>Les événements Disponibles</title>
 
   <!-- Bootstrap core CSS -->
   <link href="vendor_profilDonn/bootstrap/css/bootstrap.min.css" rel="stylesheet">
@@ -37,14 +37,14 @@
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ml-auto">
           
-          <li class="nav-item">
+<!--          <li class="nav-item">
             <a class="nav-link" href="#">Vos favoris</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#">Vos dons</a>
-          </li>
+          </li>-->
           <li class="nav-item">
-            <a class="nav-link" href="#">Associations vous interressants</a>
+            <a class="nav-link" href="Accueil.html">Retour a la page d'accueil</a>
           </li>
         </ul>
       </div>
@@ -60,8 +60,8 @@
        <c:forEach var = "ev" items = "${eventsList}"> 
       <div class="col-lg-3 col-md-6 mb-4">
         <div class="card h-100">
-            <img class="card-img-top" src="${ev.image_event}" alt=""> 
-          <%--<div class="card-img-top" style="background-image: url('images/CINDH.jpg');">--%>
+            <img class="card-img-top" src="images/${ev.image_event}" alt=""> 
+         
           <div class="card-body">
             <h4 class="card-title">${ev.titre_event}</h4>
             <p class="card-text">${ev.comm_event}</p>

@@ -16,13 +16,13 @@ public class Association implements Serializable{
     private String description_ass;
     private String rib;
     private String mdp_ass;
-    private InputStream imageAss;
+    private String imageAss;
 
-    public InputStream getImageAss() {
+    public String getImageAss() {
         return imageAss;
     }
 
-    public void setImageAss(InputStream imageAss) {
+    public void setImageAss(String imageAss) {
         this.imageAss = imageAss;
     }
     

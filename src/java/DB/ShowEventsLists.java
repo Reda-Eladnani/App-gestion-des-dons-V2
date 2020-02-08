@@ -1,4 +1,3 @@
-
 package DB;
 
 import Beans.Event;
@@ -64,5 +63,34 @@ public class ShowEventsLists {
 			}
                                     
 		return list_myEvents;	
-		}		
+		}	
+        
+           public ArrayList<Event> ShowListForAssNom(String nomAss) {
+			ArrayList<Event> list_myEvents = new ArrayList<Event>();
+			try {
+				Connection cnx = ConnexionDB.loadDatabase();
+                                                                        PreparedStatement ps1 = cnx.prepareStatement("select idAss from association where nomAss=?");
+                                                                        ps1.setString(1, nomAss);
+                                                                        ResultSet st1 = ps1.executeQuery();
+                                                                        int idAss = st1.getInt(1);
+				PreparedStatement ps = cnx.prepareStatement("select * from event where idAss=?");
+                                                                        ps.setInt(1, idAss);
+				ResultSet st = ps.executeQuery();
+				while(st.next()) {
+					Event ev = new Event();
+					ev.setId_event(st.getInt("idEvent"));
+                                                                                          ev.setTitre_event(st.getString("titre"));
+                                                                                          ev.setComm_event(st.getString("commEvent"));
+                                                                                          ev.setImage_event( st.getString("imageEvent"));
+                                                                                          ev.setId_ass(st.getInt("idAss"));
+                                                                                          list_myEvents.add(ev);
+				}
+				cnx.close();
+			
+			}catch(Exception e) {
+				e.printStackTrace();
+			}
+                                    
+		return list_myEvents;	
+		}	
 }

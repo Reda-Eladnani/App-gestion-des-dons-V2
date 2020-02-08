@@ -79,7 +79,7 @@
 					
 				</form>
 
-				<div class="login100-more" style="background-image: url('images/event.jpg');">
+				<div class="login100-more" style="background-image: url('images/modif.png');">
 				</div>
 			</div>
 		</div>

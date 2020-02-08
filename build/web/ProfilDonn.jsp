@@ -4,6 +4,10 @@
     Author     : Eladnani Ahmed Reda
 --%>
 
+<%@page import="java.sql.ResultSet"%>
+<%@page import="java.sql.PreparedStatement"%>
+<%@page import="java.sql.Connection"%>
+<%@page import="DB.ConnexionDB"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="en">
@@ -36,16 +40,19 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarResponsive">
         <ul class="navbar-nav ml-auto">
+            <li class="nav-item">
+            <a class="nav-link" href="Accueil.html">Retour a la page d'accueil</a>
+          </li>
           
-          <li class="nav-item">
-            <a class="nav-link" href="#">Vos favoris</a>
-          </li>
-          <li class="nav-item">
+<!--          <li class="nav-item">
+            <a class="nav-link" href="#">Vos evenements favoris</a>
+          </li>-->
+<!--          <li class="nav-item">
             <a class="nav-link" href="#">Vos dons</a>
-          </li>
-          <li class="nav-item">
+          </li>-->
+<!--          <li class="nav-item">
             <a class="nav-link" href="#">Associations vous interressants</a>
-          </li>
+          </li>-->
         </ul>
       </div>
     </div>
@@ -61,63 +68,57 @@
       <a href="ShowEvents" class="btn btn-primary btn-lg">Passer directement aux evenements!</a>
     </header>
 
+      
+      <div class="container">
+        <div class="row text-center">
+        <% Connection cnx = ConnexionDB.loadDatabase();
+           PreparedStatement statement = cnx.prepareStatement("SELECT * FROM association");           
+            ResultSet resultat = statement.executeQuery();
+            while(resultat.next()) {
+        %>
+       
     <!-- Page Features -->
-    <div class="row text-center">
-
-      <div class="col-lg-3 col-md-6 mb-4">
+    
+        <div class="col-lg-3 col-md-6 mb-4">
         <div class="card h-100">
-            <img class="card-img-top" src="images/CINDH.jpg" alt=""> 
+            
           <%--<div class="card-img-top" style="background-image: url('images/CINDH.jpg');">--%>
           <div class="card-body">
-            <h4 class="card-title">CINDH</h4>
-            <p class="card-text">Club d'Initiative Nationale et Développement Humain CINDH à l'Ecole Nationale Supérieure de l'informatique et Analyse des Systémes l'ENSIAS.</p>
+              <img class="card-img-top" src="images/<%=resultat.getString("imageAss") %>" alt=""> 
+            <h4 class="card-title"><%=resultat.getString("nomAss") %></h4>
+            <p class="card-text"><%=resultat.getString("descriptionAss") %></p>
+            
           </div>
           <div class="card-footer">
-            <a href="#" class="btn btn-primary">Voir plus sur le CINDH</a>
+            <a href="ProfilAssPourDonn?nomAss=<%=resultat.getString("nomAss") %>" class="btn btn-primary">Voir plus sur <%=resultat.getString("nomAss") %></a>
           </div>
+           
         </div>
       </div>
-
+         
+   
+     
+          <% } %></div> </div>
+    <!-- Page Features -->
+<!--    <div class="row text-center">
+ <c:forEach var = "ass" items = "${AssList}"> 
       <div class="col-lg-3 col-md-6 mb-4">
         <div class="card h-100">
-          <img class="card-img-top" src="images/ADEI.JPG" alt="">
+            <img class="card-img-top" src="images/${ass.imageAss}" alt=""> 
+          
           <div class="card-body">
-              <h4 class="card-title">${sessionScope.nomAss}</h4>
-            <p class="card-text">Association des eleves ingenieurs à l'Ecole Nationale Supérieure de l'informatique et Analyse des Systémes l'ENSIAS.</p>
+            <h4 class="card-title">${ass.nom_ass}</h4>
+            <p class="card-text">${ass.description_ass}</p>
           </div>
           <div class="card-footer">
-            <a href="ListeAssociations.jsp" class="btn btn-primary">Voir plus sur l'ADEI</a>
+            <a href="ProfilAssPourDonn?nomAss=${ass.nom_ass}" class="btn btn-primary">Voir plus sur ${ass.nom_ass}</a>
           </div>
         </div>
       </div>
+</c:forEach>
 
-      <div class="col-lg-3 col-md-6 mb-4">
-        <div class="card h-100">
-          <img class="card-img-top" src="http://placehold.it/500x325" alt="">
-          <div class="card-body">
-            <h4 class="card-title">Card title</h4>
-            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente esse necessitatibus neque.</p>
-          </div>
-          <div class="card-footer">
-            <a href="#" class="btn btn-primary">Find Out More!</a>
-          </div>
-        </div>
-      </div>
 
-      <div class="col-lg-3 col-md-6 mb-4">
-        <div class="card h-100">
-          <img class="card-img-top" src="http://placehold.it/500x325" alt="">
-          <div class="card-body">
-            <h4 class="card-title">Card title</h4>
-            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo magni sapiente, tempore debitis beatae culpa natus architecto.</p>
-          </div>
-          <div class="card-footer">
-            <a href="#" class="btn btn-primary">Find Out More!</a>
-          </div>
-        </div>
-      </div>
-
-    </div>
+    </div>-->
     <!-- /.row -->
 
   </div>

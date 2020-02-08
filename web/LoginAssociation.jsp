@@ -93,7 +93,7 @@
 				<div class="login100-more" style="background-image: url('images/helping.jpg');">
                                     
                                                                         <div class="sitation-zone">
-                                                                            <h1 class="sitation-zone">Allah yjib<span>.</span></h1>
+                                                                            <h1 class="sitation-zone">Qui s'aide, fortune l'avance. <span>.</span></h1>
                                                                           
 
                                                                         </div>

@@ -40,6 +40,9 @@
           <li class="nav-item">
             <a class="nav-link" href="InfosAss">Votre Association</a>
           </li>
+          <li class="nav-item">
+            <a class="nav-link" href="Accueil.html">Retour a la page d'accueil</a>
+          </li>
         </ul>
       </div>
     </div>
@@ -70,7 +73,7 @@
           </div>
           <div class="card-footer">
             <a href="ModifierEvent?titre=${ev.titre_event}" class="btn btn-primary">Modifier</a>
-            <a href="SupprimerEvent" class="btn btn-primary">Supprimer</a>
+            <a href="SupprimerEvent?titre=${ev.titre_event}" class="btn btn-primary">Supprimer</a>
           </div>
 <!--          <div class="card-footer">
             <a href="#" class="btn btn-primary">Supprimer</a>
